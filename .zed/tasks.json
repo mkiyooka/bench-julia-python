@@ -1,0 +1,50 @@
+[
+    {
+        "label": "build (C++ & Rust)",
+        "command": "pixi",
+        "args": ["run", "build"],
+        "tags": ["build"]
+    },
+    {
+        "label": "build C++",
+        "command": "pixi",
+        "args": ["run", "build-cpp"],
+        "tags": ["build"]
+    },
+    {
+        "label": "build Rust",
+        "command": "pixi",
+        "args": ["run", "build-rust"],
+        "tags": ["build"]
+    },
+    {
+        "label": "bench (all)",
+        "command": "pixi",
+        "args": ["run", "bench"],
+        "tags": ["test"]
+    },
+    {
+        "label": "bench Monte Carlo",
+        "command": "pixi",
+        "args": ["run", "bench-monte-carlo"],
+        "tags": ["test"]
+    },
+    {
+        "label": "bench N-body",
+        "command": "pixi",
+        "args": ["run", "bench-nbody"],
+        "tags": ["test"]
+    },
+    {
+        "label": "bench Simpson",
+        "command": "pixi",
+        "args": ["run", "bench-simpson"],
+        "tags": ["test"]
+    },
+    {
+        "label": "bench Rule 110",
+        "command": "pixi",
+        "args": ["run", "bench-rule110"],
+        "tags": ["test"]
+    }
+]

@@ -1,0 +1,26 @@
+{
+    "recommendations": [
+        // C/C++拡張
+        "ms-vscode.cpptools-extension-pack",
+        "ms-vscode.cmake-tools",
+        "llvm-vs-code-extensions.vscode-clangd",
+        "usernamehw.errorlens",
+        // Rust拡張
+        "rust-lang.rust-analyzer",
+        // Julia拡張
+        "julialang.language-julia",
+        // Python拡張
+        "ms-python.python",
+        "charliermarsh.ruff",
+        "ms-pyright.pyright",
+        // TOML拡張
+        "tamasfe.even-better-toml",
+        "tombi-toml.tombi",
+        // Markdown拡張
+        "DavidAnson.vscode-markdownlint",
+        "TakumiI.markdowntable",
+        // 汎用拡張
+        "esbenp.prettier-vscode",
+        "tekumara.typos-vscode"
+    ]
+}

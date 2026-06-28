@@ -1,0 +1,68 @@
+{
+    "lsp": {
+        "clangd": {
+            "binary": {
+                "arguments": [
+                    "--background-index",
+                    "--clang-tidy",
+                    "--completion-style=detailed",
+                    "--header-insertion=never",
+                    "--compile-commands-dir=$ZED_WORKTREE_ROOT/cpp/build"
+                ]
+            }
+        }
+    },
+    "languages": {
+        "C++": {
+            "language_servers": ["clangd"],
+            "format_on_save": "on"
+        },
+        "C": {
+            "language_servers": ["clangd"],
+            "format_on_save": "on"
+        },
+        "Rust": {
+            "format_on_save": "on"
+        },
+        "Julia": {
+            "format_on_save": "on"
+        },
+        "Python": {
+            "language_servers": ["pyright", "ruff"],
+            "format_on_save": "on"
+        },
+        "JSON": {
+            "tab_size": 4,
+            "format_on_save": "on"
+        },
+        "JSONC": {
+            "tab_size": 4,
+            "format_on_save": "on"
+        },
+        "TOML": {
+            "format_on_save": "on",
+            "formatter": "language_server"
+        },
+        "Markdown": {
+            "format_on_save": "on",
+            "formatter": "language_server"
+        }
+    },
+    "file_scan_exclusions": [
+        "**/.git",
+        "**/.svn",
+        "**/.hg",
+        "**/.jj",
+        "**/CVS",
+        "**/.DS_Store",
+        "**/Thumbs.db",
+        "**/.pixi",
+        "**/.venv",
+        "**/.ruff_cache",
+        "**/.pytest_cache",
+        "**/__pycache__",
+        "**/.cache",
+        "**/target",
+        "**/CMakeFiles"
+    ]
+}

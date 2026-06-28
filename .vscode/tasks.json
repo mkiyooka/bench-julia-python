@@ -1,0 +1,80 @@
+{
+    "version": "2.0.0",
+    "options": {
+        "cwd": "${workspaceFolder}"
+    },
+    "tasks": [
+        {
+            "label": "build (C++ & Rust)",
+            "type": "shell",
+            "command": "pixi",
+            "args": ["run", "build"],
+            "group": { "kind": "build", "isDefault": true },
+            "detail": "C++ と Rust をビルド",
+            "problemMatcher": ["$gcc"]
+        },
+        {
+            "label": "build C++",
+            "type": "shell",
+            "command": "pixi",
+            "args": ["run", "build-cpp"],
+            "group": "build",
+            "detail": "C++ のみビルド",
+            "problemMatcher": ["$gcc"]
+        },
+        {
+            "label": "build Rust",
+            "type": "shell",
+            "command": "pixi",
+            "args": ["run", "build-rust"],
+            "group": "build",
+            "detail": "Rust のみビルド",
+            "problemMatcher": []
+        },
+        {
+            "label": "bench (all)",
+            "type": "shell",
+            "command": "pixi",
+            "args": ["run", "bench"],
+            "group": { "kind": "test", "isDefault": true },
+            "detail": "全ベンチマークを実行",
+            "problemMatcher": []
+        },
+        {
+            "label": "bench Monte Carlo",
+            "type": "shell",
+            "command": "pixi",
+            "args": ["run", "bench-monte-carlo"],
+            "group": "test",
+            "detail": "モンテカルロ法ベンチマーク",
+            "problemMatcher": []
+        },
+        {
+            "label": "bench N-body",
+            "type": "shell",
+            "command": "pixi",
+            "args": ["run", "bench-nbody"],
+            "group": "test",
+            "detail": "N体問題ベンチマーク",
+            "problemMatcher": []
+        },
+        {
+            "label": "bench Simpson",
+            "type": "shell",
+            "command": "pixi",
+            "args": ["run", "bench-simpson"],
+            "group": "test",
+            "detail": "数値積分ベンチマーク",
+            "problemMatcher": []
+        },
+        {
+            "label": "bench Rule 110",
+            "type": "shell",
+            "command": "pixi",
+            "args": ["run", "bench-rule110"],
+            "group": "test",
+            "detail": "セルオートマトンベンチマーク",
+            "problemMatcher": []
+        }
+    ]
+}

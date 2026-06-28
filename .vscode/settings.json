@@ -1,0 +1,131 @@
+{
+    /* C/C++ file settings */
+    "[c]": {
+        "editor.rulers": [120],
+        "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd",
+        "editor.formatOnSave": true
+    },
+    "[cpp]": {
+        "editor.rulers": [120],
+        "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd",
+        "editor.formatOnSave": true
+    },
+    "C_Cpp.formatting": "disabled",
+    "C_Cpp.intelliSenseEngine": "disabled",
+
+    /* clangd settings */
+    "clangd.path": "${workspaceFolder}/.pixi/envs/default/bin/clangd",
+    "clangd.arguments": [
+        "--background-index",
+        "--clang-tidy",
+        "--completion-style=detailed",
+        "--header-insertion=never",
+        "--compile-commands-dir=${workspaceFolder}/cpp/build"
+    ],
+
+    /* CMake settings */
+    "cmake.cmakePath": "${workspaceFolder}/.pixi/envs/default/bin/cmake",
+    "cmake.buildDirectory": "${workspaceFolder}/cpp/build",
+    "cmake.sourceDirectory": "${workspaceFolder}/cpp",
+    "cmake.automaticReconfigure": false,
+    "cmake.configureOnOpen": false,
+    "cmake.configureOnEdit": false,
+
+    /* Rust settings */
+    "[rust]": {
+        "editor.rulers": [100],
+        "editor.defaultFormatter": "rust-lang.rust-analyzer",
+        "editor.formatOnSave": true
+    },
+
+    /* Julia settings */
+    "[julia]": {
+        "editor.rulers": [92],
+        "editor.formatOnSave": true
+    },
+
+    /* Python settings */
+    "[python]": {
+        "editor.rulers": [80],
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "charliermarsh.ruff",
+        "editor.codeActionsOnSave": {
+            "source.fixAll": "explicit",
+            "source.organizeImports": "explicit"
+        }
+    },
+    "ruff.lint.enable": true,
+    "ruff.importStrategy": "fromEnvironment",
+
+    /* toml file settings */
+    "[toml]": {
+        "editor.defaultFormatter": "tombi-toml.tombi",
+        "editor.formatOnSave": true
+    },
+
+    /* json, jsonc */
+    "[json][jsonc]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true
+    },
+
+    /* yaml */
+    "[yaml]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true
+    },
+
+    /* markdown */
+    "[markdown]": {
+        "editor.defaultFormatter": "DavidAnson.vscode-markdownlint",
+        "editor.formatOnSave": true,
+        "editor.wordWrap": "on",
+        "editor.quickSuggestions": {
+            "comments": "off",
+            "strings": "off",
+            "other": "off"
+        }
+    },
+
+    "files.associations": {
+        ".clang-format": "yaml",
+        ".clang-tidy": "yaml",
+        ".clangd": "yaml",
+        "settings.json": "jsonc"
+    },
+
+    /* ignore, exclude settings */
+    "files.exclude": {
+        "**/.venv": true,
+        "**/.ruff_cache": true,
+        "**/.pytest_cache": true,
+        "**/__pycache__": true,
+        "**/.pixi": true,
+        "**/.cache": true,
+        "**/*.o": true,
+        "**/*.obj": true,
+        "**/target": true
+    },
+    "files.watcherExclude": {
+        "**/.venv": true,
+        "**/.ruff_cache": true,
+        "**/.pytest_cache": true,
+        "**/__pycache__": true,
+        "**/.pixi": true,
+        "**/.cache": true,
+        "**/*.o": true,
+        "**/*.obj": true,
+        "**/target": true,
+        "**/CMakeFiles": true
+    },
+    "search.exclude": {
+        "**/.venv": true,
+        "**/.ruff_cache": true,
+        "**/.pytest_cache": true,
+        "**/__pycache__": true,
+        "**/.pixi": true,
+        "**/.cache": true,
+        "**/target": true,
+        "**/CMakeFiles": true
+    }
+}
