@@ -1,0 +1,27 @@
+[package]
+name = "bench"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+rand = "0.8"
+
+[profile.release]
+opt-level = 3
+lto = true
+
+[[bin]]
+name = "monte_carlo_pi"
+path = "src/monte_carlo_pi.rs"
+
+[[bin]]
+name = "nbody"
+path = "src/nbody.rs"
+
+[[bin]]
+name = "simpson"
+path = "src/simpson.rs"
+
+[[bin]]
+name = "rule110"
+path = "src/rule110.rs"
