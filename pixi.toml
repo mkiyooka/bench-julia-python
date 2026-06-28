@@ -1,0 +1,32 @@
+[project]
+name = "bench-julia-python"
+channels = ["conda-forge"]
+platforms = ["osx-arm64"]
+
+[dependencies]
+juliaup = ">=1.0"
+python = ">=3.12"
+numba = ">=0.60"
+numpy = ">=1.26"
+cxx-compiler = ">=1.0"
+cmake = ">=3.28"
+rust = ">=1.75"
+hyperfine = ">=1.18"
+ruff = ">=0.4"
+pyright = ">=1.1"
+
+[tasks]
+setup-julia = { cmd = "juliaup add release && juliaup default release" }
+build-cpp = { cmd = "cmake -S cpp -B cpp/build -DCMAKE_BUILD_TYPE=Release && cmake --build cpp/build" }
+build-rust = { cmd = "cd rust && cargo build --release" }
+build = { depends-on = ["build-cpp", "build-rust"] }
+
+bench-monte-carlo = { cmd = "hyperfine --warmup 2 --runs 10 'julia --startup-file=no julia/monte_carlo_pi.jl' 'python python/monte_carlo_pi.py' 'python python/monte_carlo_pi_numba.py' './cpp/build/monte_carlo_pi' './rust/target/release/monte_carlo_pi'", depends-on = ["build"] }
+bench-nbody = { cmd = "hyperfine --warmup 2 --runs 10 'julia --startup-file=no julia/nbody.jl' 'python python/nbody.py' 'python python/nbody_numba.py' './cpp/build/nbody' './rust/target/release/nbody'", depends-on = ["build"] }
+bench-simpson = { cmd = "hyperfine --warmup 2 --runs 10 'julia --startup-file=no julia/simpson.jl' 'python python/simpson.py' 'python python/simpson_numba.py' './cpp/build/simpson' './rust/target/release/simpson'", depends-on = ["build"] }
+bench-rule110 = { cmd = "hyperfine --warmup 2 --runs 10 'julia --startup-file=no julia/rule110.jl' 'python python/rule110.py' 'python python/rule110_numba.py' './cpp/build/rule110' './rust/target/release/rule110'", depends-on = ["build"] }
+bench = { depends-on = ["bench-monte-carlo", "bench-nbody", "bench-simpson", "bench-rule110"] }
+
+format = { cmd = "ruff format python/" }
+lint = { cmd = "ruff check --fix --show-fixes python/" }
+typecheck = { cmd = "pyright python/" }
