@@ -13,7 +13,7 @@ fn simpson(n: i64) -> f64 {
 }
 
 fn main() {
-    let n = 100_000_000;
+    let n = 50_000_000;
     let pi_est = simpson(n);
     println!("Pi ≈ {:.10}", pi_est);
 }

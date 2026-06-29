@@ -34,5 +34,5 @@ rule = np.array([0, 1, 1, 1, 0, 1, 1, 0], dtype=np.int32)
 run(100, 10, rule)
 
 # main
-count = run(10_000, 50_000, rule)
+count = run(5_000, 20_000, rule)
 print(f"Population: {count}")

@@ -71,7 +71,7 @@ fn offset_momentum(bodies: &mut [Body; N_BODIES]) {
 }
 
 fn main() {
-    let n = 5_000_000;
+    let n = 1_000_000;
     let dt = 0.01;
 
     let mut bodies: [Body; N_BODIES] = [

@@ -2,8 +2,8 @@
 #include <vector>
 
 int main() {
-    const int width = 10'000;
-    const int generations = 50'000;
+    const int width = 5'000;
+    const int generations = 20'000;
     const int rule[8] = {0, 1, 1, 1, 0, 1, 1, 0};
 
     std::vector<int> current(width, 0);

@@ -12,6 +12,6 @@ function simpson(n::Int)
     return s * h / 3.0
 end
 
-n = 100_000_000
+n = 50_000_000
 pi_est = simpson(n)
 println("Pi ≈ $pi_est")

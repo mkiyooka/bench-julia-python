@@ -1,6 +1,6 @@
 def rule110():
-    width = 10_000
-    generations = 50_000
+    width = 5_000
+    generations = 20_000
     rule = [0, 1, 1, 1, 0, 1, 1, 0]
 
     current = [0] * width

@@ -15,7 +15,7 @@ double simpson(int n) {
 }
 
 int main() {
-    int n = 100'000'000;
+    int n = 50'000'000;
     double pi_est = simpson(n);
     std::printf("Pi ≈ %.10f\n", pi_est);
     return 0;

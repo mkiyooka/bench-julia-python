@@ -1,6 +1,6 @@
 fn main() {
-    let width: usize = 10_000;
-    let generations: usize = 50_000;
+    let width: usize = 5_000;
+    let generations: usize = 20_000;
     let rule: [u8; 8] = [0, 1, 1, 1, 0, 1, 1, 0];
 
     let mut current: Vec<u8> = vec![0; width];

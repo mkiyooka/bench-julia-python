@@ -110,7 +110,7 @@ advance(bodies_warmup, 0.01)
 energy(bodies_warmup)
 run(bodies_warmup, 1, 0.01)
 
-n = 5_000_000
+n = 1_000_000
 bodies = make_bodies()
 print(f"{energy(bodies):.9f}")
 run(bodies, n, 0.01)

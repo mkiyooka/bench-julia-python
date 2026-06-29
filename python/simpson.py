@@ -10,6 +10,6 @@ def simpson(n: int) -> float:
     return s * h / 3.0
 
 
-n = 100_000_000
+n = 50_000_000
 pi_est = simpson(n)
 print(f"Pi ≈ {pi_est}")

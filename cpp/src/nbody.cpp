@@ -67,7 +67,7 @@ void offset_momentum(Body bodies[]) {
 }
 
 int main() {
-    constexpr int n = 5'000'000;
+    constexpr int n = 1'000'000;
     constexpr double dt = 0.01;
 
     Body bodies[N_BODIES] = {

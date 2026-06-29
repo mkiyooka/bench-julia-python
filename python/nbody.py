@@ -93,7 +93,7 @@ def energy(bodies):
     return e
 
 
-n = 5_000_000
+n = 1_000_000
 bodies = make_bodies()
 print(f"{energy(bodies):.9f}")
 for _ in range(n):

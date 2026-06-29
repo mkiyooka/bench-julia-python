@@ -83,7 +83,7 @@ function energy(bodies)
 end
 
 function main()
-    n = 5_000_000
+    n = 1_000_000
     bodies = make_bodies()
     println(energy(bodies))
     for _ in 1:n
