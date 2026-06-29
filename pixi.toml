@@ -1,14 +1,13 @@
-[project]
+[workspace]
 name = "bench-julia-python"
 channels = ["conda-forge"]
-platforms = ["osx-arm64"]
+platforms = ["osx-arm64", "linux-64"]
 
 [dependencies]
 juliaup = ">=1.0"
 python = ">=3.12"
 numba = ">=0.60"
 numpy = ">=1.26"
-cxx-compiler = ">=1.0"
 cmake = ">=3.28"
 rust = ">=1.75"
 hyperfine = ">=1.18"
@@ -30,3 +29,13 @@ bench = { depends-on = ["bench-monte-carlo", "bench-nbody", "bench-simpson", "be
 format = { cmd = "ruff format python/" }
 lint = { cmd = "ruff check --fix --show-fixes python/" }
 typecheck = { cmd = "pyright python/" }
+
+[target.osx-arm64.dependencies]
+cxx-compiler = ">=1.0"
+
+[target.linux-64.dependencies]
+gcc = "==15.1.0"
+gxx = "==15.1.0"
+mold = "==2.40.4"
+libgcc-ng = "==15.1.0"
+libstdcxx-ng = "==15.1.0"
