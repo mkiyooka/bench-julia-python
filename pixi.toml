@@ -21,7 +21,7 @@ build-rust = { cmd = "cd rust && cargo build --release" }
 build = { depends-on = ["build-cpp", "build-rust"] }
 
 bench-monte-carlo = { cmd = "hyperfine --warmup 1 --runs 5 'julia --startup-file=no julia/monte_carlo_pi.jl' 'julia --startup-file=no julia/monte_carlo_pi_vectorized.jl' 'python python/monte_carlo_pi.py' 'python python/monte_carlo_pi_numpy.py' 'python python/monte_carlo_pi_numba.py' './cpp/build/monte_carlo_pi' './rust/target/release/monte_carlo_pi'", depends-on = ["build"] }
-bench-nbody = { cmd = "hyperfine --warmup 1 --runs 5 'julia --startup-file=no julia/nbody.jl' 'python python/nbody.py' 'python python/nbody_numpy.py' 'python python/nbody_numba.py' './cpp/build/nbody' './rust/target/release/nbody'", depends-on = ["build"] }
+bench-nbody = { cmd = "hyperfine --warmup 1 --runs 5 'julia --startup-file=no julia/nbody.jl' 'python python/nbody.py' 'python python/nbody_numba.py' './cpp/build/nbody' './rust/target/release/nbody'", depends-on = ["build"] }
 bench-simpson = { cmd = "hyperfine --warmup 1 --runs 5 'julia --startup-file=no julia/simpson.jl' 'julia --startup-file=no julia/simpson_vectorized.jl' 'python python/simpson.py' 'python python/simpson_numpy.py' 'python python/simpson_numba.py' './cpp/build/simpson' './rust/target/release/simpson'", depends-on = ["build"] }
 bench-rule110 = { cmd = "hyperfine --warmup 1 --runs 5 'julia --startup-file=no julia/rule110.jl' 'python python/rule110.py' 'python python/rule110_numpy.py' 'python python/rule110_numba_minimal.py' 'python python/rule110_numba.py' './cpp/build/rule110' './rust/target/release/rule110'", depends-on = ["build"] }
 bench = { depends-on = ["bench-monte-carlo", "bench-nbody", "bench-simpson", "bench-rule110"] }
